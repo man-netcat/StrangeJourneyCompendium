@@ -16,7 +16,7 @@ public class SpinnerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_spinner);
 
         // Import demon database from MainActivity
-        Demon[] demons = MainActivity.demondata;
+        Demon[] demons = MainActivity.demons;
 
         // Create list of demons and sort it by name
         ArrayList<String> demonNames = new ArrayList<String>();
