@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Strange Journey Compendium</string>
+    <string name="select_demon">Select Demon</string>
+    <string name="search_demon">Search Demon</string>
 </resources>

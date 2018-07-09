@@ -8,10 +8,26 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/menubutton"
-        android:layout_width="95dp"
-        android:layout_height="wrap_content"
-        android:text="Select Demon"
+        android:id="@+id/select"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/select_demon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/searchbar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/searchbar"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/search_demon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/select"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 </android.support.constraint.ConstraintLayout>

@@ -19,7 +19,7 @@ public class SpinnerActivity extends AppCompatActivity {
         Demon[] demons = MainActivity.demons;
 
         // Create list of demons and sort it by name
-        ArrayList<String> demonNames = new ArrayList<String>();
+        ArrayList<String> demonNames = new ArrayList<>();
         for (Demon demon : demons) {
             demonNames.add(demon.getName());
         }
@@ -27,7 +27,7 @@ public class SpinnerActivity extends AppCompatActivity {
 
         // Create Spinner object
         Spinner spinner = findViewById(R.id.spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, demonNames);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, demonNames);
         spinner.setAdapter(adapter);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
     }

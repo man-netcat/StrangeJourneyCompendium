@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Spinner;
 
 import com.google.gson.Gson;
 
@@ -32,11 +31,20 @@ public class MainActivity extends AppCompatActivity {
         demons = gson.fromJson(br, Demon[].class);
 
         // Create menu buttons
-        Button b = findViewById(R.id.menubutton);
-        b.setOnClickListener(new View.OnClickListener() {
+        Button select = findViewById(R.id.select);
+        select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent obj = new Intent(MainActivity.this, SpinnerActivity.class);
+                startActivity(obj);
+            }
+        });
+
+        Button search = findViewById(R.id.searchbar);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent obj = new Intent(MainActivity.this, SearchActivity.class);
                 startActivity(obj);
             }
         });
