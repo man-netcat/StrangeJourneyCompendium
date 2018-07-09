@@ -30,14 +30,13 @@ public class MainActivity extends AppCompatActivity {
         TextView t = findViewById(R.id.test);
 
         for (Demon demon : demons) {
-            if (demon.getName().equals("Abaddon")) {
+            if (demon.getName().equals("Anahita")) {
                 String a = demon.getAilments();
-                ArrayList<String> list = Parsers.parseAilments(a);
+                ArrayList<String> parsed = Parsers.parseAilments(a);
                 StringBuilder res = new StringBuilder();
-                res.append(a);
-                res.append("\n");
-                for (String s : list) {
-                    res.append(s).append("\n");
+                res.append(a).append("\n\n");
+                for (String s : parsed) {
+                    res.append(s).append("\n\n");
                 }
 
                 t.setText(res.toString());
