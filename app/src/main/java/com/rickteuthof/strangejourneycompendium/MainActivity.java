@@ -1,40 +1,49 @@
 package com.rickteuthof.strangejourneycompendium;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
 
-import org.w3c.dom.Text;
-
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BufferedReader bufferedReader = null;
+        // Create InputStream for JSON file.
         InputStream is = getResources().openRawResource(R.raw.demon_data);
         Reader r = new InputStreamReader(is);
         BufferedReader br = new BufferedReader(r);
+
+        // Create GSON Object from BufferedReader
         Gson gson = new Gson();
         Demon[] demons = gson.fromJson(br, Demon[].class);
 
-        TextView t=new TextView(this);
+        TextView t = findViewById(R.id.test);
 
-        t=(TextView)findViewById(R.id.test);
-        t.setText("Demon 0 name is: " + demons[0].getName());
+        for (Demon demon : demons) {
+            if (demon.getName().equals("Abaddon")) {
+                String a = demon.getAilments();
+                ArrayList<String> list = Parsers.parseAilments(a);
+                StringBuilder res = new StringBuilder();
+                res.append(a);
+                res.append("\n");
+                for (String s : list) {
+                    res.append(s).append("\n");
+                }
+
+                t.setText(res.toString());
+            }
+        }
+
+//        t.setText(String.format("Demon 0 name is: %s", demons[0].getName()));
     }
 }
