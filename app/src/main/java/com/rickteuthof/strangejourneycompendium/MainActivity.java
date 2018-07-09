@@ -1,8 +1,11 @@
 package com.rickteuthof.strangejourneycompendium;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Spinner;
 
 import com.google.gson.Gson;
 
@@ -10,9 +13,10 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    public static Demon[] demons;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,24 +29,16 @@ public class MainActivity extends AppCompatActivity {
 
         // Create GSON Object from BufferedReader
         Gson gson = new Gson();
-        Demon[] demons = gson.fromJson(br, Demon[].class);
+        demons = gson.fromJson(br, Demon[].class);
 
-        TextView t = findViewById(R.id.test);
-
-        for (Demon demon : demons) {
-            if (demon.getName().equals("Anahita")) {
-                String a = demon.getAilments();
-                ArrayList<String> parsed = Parsers.parseAilments(a);
-                StringBuilder res = new StringBuilder();
-                res.append(a).append("\n\n");
-                for (String s : parsed) {
-                    res.append(s).append("\n\n");
-                }
-
-                t.setText(res.toString());
+        // Create menu buttons
+        Button b = findViewById(R.id.menubutton);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent obj = new Intent(MainActivity.this, SpinnerActivity.class);
+                startActivity(obj);
             }
-        }
-
-//        t.setText(String.format("Demon 0 name is: %s", demons[0].getName()));
+        });
     }
 }
