@@ -1,13 +1,11 @@
 package com.rickteuthof.strangejourneycompendium;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Adapter;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class SpinnerActivity extends AppCompatActivity {
     @Override
@@ -19,11 +17,7 @@ public class SpinnerActivity extends AppCompatActivity {
         Demon[] demons = MainActivity.demons;
 
         // Create list of demons and sort it by name
-        ArrayList<String> demonNames = new ArrayList<>();
-        for (Demon demon : demons) {
-            demonNames.add(demon.getName());
-        }
-        Collections.sort(demonNames);
+        ArrayList<String> demonNames = MainActivity.demonNames;
 
         // Create Spinner object
         Spinner spinner = findViewById(R.id.spinner);

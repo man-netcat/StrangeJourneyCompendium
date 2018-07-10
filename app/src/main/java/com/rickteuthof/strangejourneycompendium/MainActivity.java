@@ -1,8 +1,8 @@
 package com.rickteuthof.strangejourneycompendium;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -12,9 +12,12 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
     public static Demon[] demons;
+    public static ArrayList<String> demonNames;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
         Gson gson = new Gson();
         demons = gson.fromJson(br, Demon[].class);
 
+        Demon[] demons = MainActivity.demons;
+        demonNames = new ArrayList<>();
+        for (Demon demon : demons) {
+            demonNames.add(demon.getName());
+        }
+        Collections.sort(demonNames);
+
         // Create menu buttons
         Button select = findViewById(R.id.select);
         select.setOnClickListener(new View.OnClickListener() {
@@ -40,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button search = findViewById(R.id.searchbar);
+        Button search = findViewById(R.id.search);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

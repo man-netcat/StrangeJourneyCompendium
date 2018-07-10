@@ -14,13 +14,13 @@
         android:layout_marginBottom="8dp"
         android:text="@string/select_demon"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/searchbar"
+        app:layout_constraintEnd_toStartOf="@+id/search"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/searchbar"
+        android:id="@+id/search"
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginBottom="8dp"
