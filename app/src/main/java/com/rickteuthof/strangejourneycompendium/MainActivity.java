@@ -40,16 +40,6 @@ public class MainActivity extends AppCompatActivity {
         }
         Collections.sort(demonNames);
 
-        // Create menu buttons
-        Button select = findViewById(R.id.select);
-        select.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent obj = new Intent(MainActivity.this, SpinnerActivity.class);
-                startActivity(obj);
-            }
-        });
-
         Button search = findViewById(R.id.search);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
