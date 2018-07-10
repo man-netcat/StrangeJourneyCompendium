@@ -9,12 +9,11 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/logo"
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:adjustViewBounds="true"
-        android:contentDescription="@string/strange_journey_logo"
         app:srcCompat="@drawable/logo" />
 
     <Button

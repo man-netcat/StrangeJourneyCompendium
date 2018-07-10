@@ -1,6 +1,7 @@
 package com.rickteuthof.strangejourneycompendium;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,7 +10,6 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.SearchView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -23,18 +23,22 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        RecyclerView rv = findViewById(R.id.recyclerView);
 
         results = MainActivity.demonNames;
         adapter = new SearchAdapter(this, results);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+        rv.setAdapter(adapter);
+        rv.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
+                LinearLayoutManager.VERTICAL, false));
 
-        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new ClickListener() {
+        rv.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(),
+                rv, new ClickListener() {
 
             @Override
             public void onClick(View view, int position) {
-                Toast.makeText(SearchActivity.this, results.get(position), Toast.LENGTH_SHORT).show();
+                DataActivity.name = results.get(position);
+                Intent obj = new Intent(SearchActivity.this, DataActivity.class);
+                startActivity(obj);
             }
 
             @Override
@@ -44,8 +48,8 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         }));
 
 
-        SearchView editsearch = findViewById(R.id.searchBar);
-        editsearch.setOnQueryTextListener(this);
+        SearchView s = findViewById(R.id.searchBar);
+        s.setOnQueryTextListener(this);
 
     }
 

@@ -4,4 +4,7 @@
     <string name="textview">TextView</string>
     <string name="search_demon">Search Demon</string>
     <string name="strange_journey_logo">Strange Journey Logo</string>
+    <string name="logo_with_text">Logo with text</string>
+    <string name="result_item">Result Item</string>
+    <string name="result">Result</string>
 </resources>
