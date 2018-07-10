@@ -1,4 +1,5 @@
 package com.rickteuthof.strangejourneycompendium;
+
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -16,7 +17,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
     private ArrayList<String> results;
     private ArrayList<String> demons;
 
-    SearchAdapter(Context ctx, ArrayList<String> results){
+    SearchAdapter(Context ctx, ArrayList<String> results) {
 
         inflater = LayoutInflater.from(ctx);
         this.results = results;
@@ -24,8 +25,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
         this.demons.addAll(SearchActivity.results);
     }
 
-    @NonNull
-    @Override
+    @NonNull @Override
     public SearchAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = inflater.inflate(R.layout.recycler_item, parent, false);
@@ -44,7 +44,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
         return results.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView result;
 
@@ -54,7 +54,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
         }
     }
 
-    // Filter
     public void filter(String charText) {
         charText = charText.toLowerCase(Locale.getDefault());
         SearchActivity.results.clear();
