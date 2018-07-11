@@ -28,12 +28,8 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         results = MainActivity.demonNames;
         adapter = new SearchAdapter(this, results);
         rv.setAdapter(adapter);
-        rv.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
-                LinearLayoutManager.VERTICAL, false));
-
-        rv.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(),
-                rv, new ClickListener() {
-
+        rv.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+        rv.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), rv, new ClickListener() {
             @Override
             public void onClick(View view, int position) {
                 DataActivity.name = results.get(position);
@@ -47,27 +43,24 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
             }
         }));
 
-
         SearchView s = findViewById(R.id.searchBar);
         s.setOnQueryTextListener(this);
-
     }
 
     @Override
     public boolean onQueryTextSubmit(String query) {
-
+        adapter.filter(query);
         return false;
     }
 
     @Override
-    public boolean onQueryTextChange(String newText) {
-        adapter.filter(newText);
+    public boolean onQueryTextChange(String query) {
+        adapter.filter(query);
         return false;
     }
 
     public interface ClickListener {
         void onClick(View view, int position);
-
         void onLongClick(View view, int position);
     }
 

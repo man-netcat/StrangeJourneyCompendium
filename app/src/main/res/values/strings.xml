@@ -1,10 +1,26 @@
 <resources>
     <string name="app_name">Strange Journey Compendium</string>
     <string name="image">Image</string>
-    <string name="textview">TextView</string>
     <string name="search_demon">Search Demon</string>
     <string name="strange_journey_logo">Strange Journey Logo</string>
     <string name="logo_with_text">Logo with text</string>
     <string name="result_item">Result Item</string>
     <string name="result">Result</string>
+    <string name="skill_1">Skill 1</string>
+    <string name="skill_2">Skill 2</string>
+    <string name="name">Name</string>
+    <string name="race">Race</string>
+    <string name="alignment">Alignment</string>
+    <string name="skill_3">Skill 3</string>
+    <string name="source_1">Source 1</string>
+    <string name="source_2">Source 2</string>
+    <string name="source_3">Source 3</string>
+    <string name="source_skills">Source Skills:</string>
+    <string name="natural_skills">Natural Skills:</string>
+    <string name="placeholder_for_demon_sprite">Placeholder for Demon sprite</string>
+    <string name="placeholder_image">Placeholder Image</string>
+    <string name="resistances">Resistances:</string>
+    <string name="resistance_array">Resistance Array</string>
+    <string name="ailment_array">Ailment Array</string>
+    <string name="ailments">Ailments:</string>
 </resources>

@@ -27,15 +27,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
 
     @NonNull @Override
     public SearchAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View view = inflater.inflate(R.layout.recycler_item, parent, false);
-
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull SearchAdapter.MyViewHolder holder, int position) {
-
         holder.result.setText(results.get(position));
     }
 
@@ -54,14 +51,14 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
         }
     }
 
-    public void filter(String charText) {
-        charText = charText.toLowerCase(Locale.getDefault());
+    public void filter(String query) {
+        query = query.toLowerCase(Locale.getDefault());
         SearchActivity.results.clear();
-        if (charText.length() == 0) {
+        if (query.length() == 0) {
             SearchActivity.results.addAll(demons);
         } else {
             for (String demon : demons) {
-                if (demon.toLowerCase(Locale.getDefault()).contains(charText)) {
+                if (demon.toLowerCase(Locale.getDefault()).contains(query)) {
                     SearchActivity.results.add(demon);
                 }
             }
