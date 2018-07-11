@@ -81,4 +81,25 @@ public class Parsers {
 
         return parsed;
     }
+
+    public static ArrayList<String> parseAttack(Attack attack) {
+        ArrayList<String> parsed = new ArrayList<>();
+        String ailment = attack.getAilment();
+        String element = attack.getElement();
+        String hits = attack.getHits();
+        String target = attack.getTarget();
+        if (ailment != null) {
+            parsed.add("ailment: " + ailment);
+        }
+        if (element != null) {
+            parsed.add("element: " + element);
+        }
+        if (hits != null) {
+            parsed.add("hits: " + hits);
+        }
+        if (target != null) {
+            parsed.add("target: " + target);
+        }
+        return parsed;
+    }
 }

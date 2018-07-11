@@ -24,15 +24,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="6dp"
-                android:layout_weight="1"
                 android:text="@string/race" />
 
             <TextView
                 android:id="@+id/demon_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/name" />
+
+            <Space
+                android:layout_width="92dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/demon_alignment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/alignment" />
 
         </LinearLayout>
 
@@ -46,26 +54,14 @@
             android:cropToPadding="false"
             app:srcCompat="@drawable/placeholder" />
 
-        <TextView
-            android:id="@+id/demon_alignment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/alignment" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="19dp"
-            android:layout_weight="1" />
-
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
             <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -75,12 +71,12 @@
             </TableRow>
 
             <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/demon_skill_1"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="19dp"
                     android:layout_weight="1"
@@ -88,22 +84,22 @@
 
                 <TextView
                     android:id="@+id/demon_skill_2"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/skill_2" />
 
                 <TextView
                     android:id="@+id/demon_skill_3"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/skill_3" />
             </TableRow>
 
             <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -119,21 +115,21 @@
 
                 <TextView
                     android:id="@+id/demon_source_1"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/source_1" />
 
                 <TextView
                     android:id="@+id/demon_source_2"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/source_2" />
 
                 <TextView
                     android:id="@+id/demon_source_3"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/source_3" />
@@ -193,6 +189,24 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/inherits_array" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/attack_attributes" />
+
+        <TextView
+            android:id="@+id/demon_attack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/attack" />
 
     </LinearLayout>
 </ScrollView>

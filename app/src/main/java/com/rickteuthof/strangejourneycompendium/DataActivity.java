@@ -1,5 +1,6 @@
 package com.rickteuthof.strangejourneycompendium;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
@@ -49,10 +50,18 @@ public class DataActivity extends AppCompatActivity {
         TextView resistanceView = findViewById(R.id.demon_resistances);
         TextView ailmentView = findViewById(R.id.demon_ailments);
         TextView inheritanceView = findViewById(R.id.demon_inherits);
-
+        TextView attackView = findViewById(R.id.demon_attack);
         nameView.setText(demon.getName());
         raceView.setText(demon.getRace());
-        alignmentView.setText(demon.getAlign());
+
+        // Handle alignment
+        String alignment = demon.getAlign();
+        alignmentView.setText(alignment);
+        if (alignment.contains("Law")) {
+            alignmentView.setTextColor(Color.parseColor("#428ff4"));
+        } else if (alignment.contains("Chaos")) {
+            alignmentView.setTextColor(Color.parseColor("#e03e3e"));
+        }
 
         // Handle skills
         ArrayList<String> skillSet = demon.getSkills();
@@ -107,5 +116,18 @@ public class DataActivity extends AppCompatActivity {
             inheritanceViewString.append(type).append("\n");
         }
         inheritanceView.setText(inheritanceViewString.toString());
+
+        StringBuilder attackViewString = new StringBuilder();
+        Attack demonAttack = demon.getAttack();
+        if (demonAttack != null) {
+            ArrayList<String> attack = Parsers.parseAttack(demonAttack);
+            for (String attribute : attack) {
+                attackViewString.append(attribute).append("\n");
+            }
+            attackView.setText(attackViewString.toString());
+        } else {
+            attackView.setText(R.string.attributes);
+        }
+
     }
 }

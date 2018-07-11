@@ -21,6 +21,11 @@
     <string name="placeholder_image">Placeholder Image</string>
     <string name="resistances">Resistances:</string>
     <string name="resistance_array">Resistance Array</string>
+    <string name="inherits_array">Inherit Array</string>
+    <string name="inherits">Inherits:</string>
     <string name="ailment_array">Ailment Array</string>
     <string name="ailments">Ailments:</string>
+    <string name="attack_attributes">Attack Attributes:</string>
+    <string name="attack">Attack</string>
+    <string name="attributes">no special attributes</string>
 </resources>
