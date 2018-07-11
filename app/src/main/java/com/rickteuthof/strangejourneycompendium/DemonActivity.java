@@ -4,19 +4,18 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class DataActivity extends AppCompatActivity {
+public class DemonActivity extends AppCompatActivity {
     public static String name;
     public Demon[] demons = MainActivity.demons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data);
+        setContentView(R.layout.activity_demon);
         Demon demon = getCurrentDemon(name);
 
         setTextViews(demon);
@@ -129,6 +128,5 @@ public class DataActivity extends AppCompatActivity {
         } else {
             attackView.setText(R.string.attributes);
         }
-
     }
 }

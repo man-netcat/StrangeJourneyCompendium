@@ -14,12 +14,20 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:adjustViewBounds="true"
+        android:contentDescription="@string/logo"
         app:srcCompat="@drawable/logo" />
 
     <Button
-        android:id="@+id/search"
-        android:layout_width="wrap_content"
+        android:id="@+id/searchDemon"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="@string/search_demon" />
+        android:text="@string/search_demon_by_name" />
+
+    <Button
+        android:id="@+id/searchSkill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/search_demon_by_skill" />
 </LinearLayout>

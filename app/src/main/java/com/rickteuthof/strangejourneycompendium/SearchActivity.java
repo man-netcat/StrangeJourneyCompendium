@@ -14,7 +14,7 @@ import android.widget.SearchView;
 import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
-
+    public static String searchType;
     public static ArrayList<String> results;
     private SearchAdapter adapter;
 
@@ -25,16 +25,26 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
 
         RecyclerView rv = findViewById(R.id.recyclerView);
 
-        results = MainActivity.demonNames;
+        if (searchType.equals("skill")) {
+            results = MainActivity.skillNames;
+        } else {
+            results = MainActivity.demonNames;
+        }
         adapter = new SearchAdapter(this, results);
         rv.setAdapter(adapter);
         rv.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
         rv.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), rv, new ClickListener() {
             @Override
             public void onClick(View view, int position) {
-                DataActivity.name = results.get(position);
-                Intent obj = new Intent(SearchActivity.this, DataActivity.class);
-                startActivity(obj);
+                if (searchType.equals("skill")) {
+                    SkillActivity.name = results.get(position);
+                    Intent obj = new Intent(SearchActivity.this, SkillActivity.class);
+                    startActivity(obj);
+                } else {
+                    DemonActivity.name = results.get(position);
+                    Intent obj = new Intent(SearchActivity.this, DemonActivity.class);
+                    startActivity(obj);
+                }
             }
 
             @Override
@@ -103,9 +113,6 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
 
         @Override
         public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
         }
-
-
     }
 }

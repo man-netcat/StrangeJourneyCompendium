@@ -15,17 +15,18 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
 
     private LayoutInflater inflater;
     private ArrayList<String> results;
-    private ArrayList<String> demons;
+    private ArrayList<String> itemList;
 
     SearchAdapter(Context ctx, ArrayList<String> results) {
 
         inflater = LayoutInflater.from(ctx);
         this.results = results;
-        this.demons = new ArrayList<>();
-        this.demons.addAll(SearchActivity.results);
+        this.itemList = new ArrayList<>();
+        this.itemList.addAll(SearchActivity.results);
     }
 
-    @NonNull @Override
+    @NonNull
+    @Override
     public SearchAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.recycler_item, parent, false);
         return new MyViewHolder(view);
@@ -55,11 +56,11 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
         query = query.toLowerCase(Locale.getDefault());
         SearchActivity.results.clear();
         if (query.length() == 0) {
-            SearchActivity.results.addAll(demons);
+            SearchActivity.results.addAll(itemList);
         } else {
-            for (String demon : demons) {
-                if (demon.toLowerCase(Locale.getDefault()).contains(query)) {
-                    SearchActivity.results.add(demon);
+            for (String item : itemList) {
+                if (item.toLowerCase(Locale.getDefault()).contains(query)) {
+                    SearchActivity.results.add(item);
                 }
             }
         }

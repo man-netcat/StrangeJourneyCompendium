@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">Strange Journey Compendium</string>
     <string name="image">Image</string>
-    <string name="search_demon">Search Demon</string>
-    <string name="strange_journey_logo">Strange Journey Logo</string>
-    <string name="logo_with_text">Logo with text</string>
     <string name="result_item">Result Item</string>
     <string name="result">Result</string>
     <string name="skill_1">Skill 1</string>
@@ -28,4 +25,7 @@
     <string name="attack_attributes">Attack Attributes:</string>
     <string name="attack">Attack</string>
     <string name="attributes">no special attributes</string>
+    <string name="logo">Logo</string>
+    <string name="search_demon_by_name">Search Demon by Name</string>
+    <string name="search_demon_by_skill">Search Demon by Skill</string>
 </resources>
