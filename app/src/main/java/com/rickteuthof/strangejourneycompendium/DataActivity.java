@@ -1,8 +1,7 @@
 package com.rickteuthof.strangejourneycompendium;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -49,6 +48,7 @@ public class DataActivity extends AppCompatActivity {
         TextView source3View = findViewById(R.id.demon_source_3);
         TextView resistanceView = findViewById(R.id.demon_resistances);
         TextView ailmentView = findViewById(R.id.demon_ailments);
+        TextView inheritanceView = findViewById(R.id.demon_inherits);
 
         nameView.setText(demon.getName());
         raceView.setText(demon.getRace());
@@ -99,5 +99,13 @@ public class DataActivity extends AppCompatActivity {
             ailmentViewString.append(ailment).append("\n");
         }
         ailmentView.setText(ailmentViewString.toString());
+
+        // Handle inheritance
+        StringBuilder inheritanceViewString = new StringBuilder();
+        ArrayList<String> inherits = Parsers.parseInherits(demon.getInherits());
+        for (String type : inherits) {
+            inheritanceViewString.append(type).append("\n");
+        }
+        inheritanceView.setText(inheritanceViewString.toString());
     }
 }
