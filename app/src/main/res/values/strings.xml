@@ -13,7 +13,7 @@
     <string name="source_2">Source 2</string>
     <string name="source_3">Source 3</string>
     <string name="source_skills">Source Skills:</string>
-    <string name="natural_skills">Natural Skills:</string>
+    <string name="natural_skills">Innate Skills:</string>
     <string name="placeholder_for_demon_sprite">Placeholder for Demon sprite</string>
     <string name="placeholder_image">Placeholder Image</string>
     <string name="resistances">Resistances:</string>
@@ -35,7 +35,7 @@
     <string name="accuracy">Accuracy</string>
     <string name="power">Power</string>
     <string name="inherit">Inherit</string>
-    <string name="demons">Demons that learn </string>
+    <string name="demons">Demons that know </string>
     <string name="noAccuracy">Accuracy: none</string>
     <string name="noRank">Rank: none</string>
     <string name="noCost">Cost: none</string>

@@ -59,7 +59,15 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
 
     @Override
     public boolean onQueryTextSubmit(String query) {
-        adapter.filter(query);
+        if (searchType.equals("skill")) {
+            SkillActivity.name = results.get(0);
+            Intent obj = new Intent(SearchActivity.this, SkillActivity.class);
+            startActivity(obj);
+        } else {
+            DemonActivity.name = results.get(0);
+            Intent obj = new Intent(SearchActivity.this, DemonActivity.class);
+            startActivity(obj);
+        }
         return false;
     }
 

@@ -24,9 +24,14 @@ public class DemonActivity extends AppCompatActivity {
         ImageView sprite = findViewById(R.id.placeholder);
         String imageName = name.toLowerCase()
                 .replace(' ', '_')
-                .replace('-', '_')
-                .replace("", "0")
-                .replace("\'", "1");
+                .replace('-', '_');
+        if (imageName.equals("long")) {
+            // long is a reserved keyword...
+            imageName = "long_";
+        } else if (imageName.equals("kamapua'a")) {
+            // ugh why does it need to have the stupid apostrophe
+            imageName = "kamapua_a";
+        }
         Log.d("test", imageName);
         int resID = getResources().getIdentifier(imageName, "drawable", getPackageName());
         if (resID != 0) {

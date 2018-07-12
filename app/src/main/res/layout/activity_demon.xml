@@ -9,13 +9,13 @@
     tools:context=".DemonActivity">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -49,9 +49,9 @@
         <ImageView
             android:id="@+id/placeholder"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:layout_weight="1"
             android:adjustViewBounds="true"
             android:contentDescription="@string/placeholder_image"
             android:cropToPadding="false"
@@ -59,7 +59,7 @@
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1">
 
             <TableRow
@@ -98,6 +98,16 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/skill_3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="21dp"
+                    android:layout_weight="1" />
             </TableRow>
 
             <TableRow
