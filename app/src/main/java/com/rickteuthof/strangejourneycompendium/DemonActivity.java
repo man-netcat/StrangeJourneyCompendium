@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class DemonActivity extends AppCompatActivity {
     public static String name;
-    public Demon[] demons = MainActivity.demons;
+    public final Demon[] demons = MainActivity.demons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

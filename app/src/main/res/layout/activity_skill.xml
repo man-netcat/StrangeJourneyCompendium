@@ -7,67 +7,84 @@
     tools:context=".SkillActivity">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/skill_name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/name" />
 
         <TextView
             android:id="@+id/skill_cost"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/cost" />
 
         <TextView
             android:id="@+id/skill_effect"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/effect" />
 
         <TextView
             android:id="@+id/skill_element"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/element" />
 
         <TextView
             android:id="@+id/skill_rank"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/rank" />
 
         <TextView
             android:id="@+id/skill_accuracy"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/accuracy" />
 
         <TextView
             android:id="@+id/skill_power"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/power" />
 
         <TextView
             android:id="@+id/skill_inherit"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/inherit" />
 
         <TextView
             android:id="@+id/demon_string"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/demons" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/skill_demons"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <Switch
+            android:id="@+id/skill_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Search Skills" />
+
+        <Switch
+            android:id="@+id/source_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Search Source" />
+
     </LinearLayout>
 </ScrollView>

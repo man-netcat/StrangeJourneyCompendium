@@ -6,10 +6,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -17,7 +18,9 @@ import java.util.Collections;
 
 public class SkillActivity extends AppCompatActivity {
     public static String name;
-    public Skill[] skills = MainActivity.skills;
+    public final Skill[] skills = MainActivity.skills;
+    public static boolean skillsChecked = true;
+    public static boolean sourceChecked = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,8 +100,25 @@ public class SkillActivity extends AppCompatActivity {
         ArrayList<String> results = new ArrayList<>();
         Demon[] demons = MainActivity.demons;
 
+        Switch skills = findViewById(R.id.skill_switch);
+        Switch source = findViewById(R.id.source_switch);
+
+        skills.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                skillsChecked = isChecked;
+            }
+        });
+
+        source.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                sourceChecked = isChecked;
+            }
+        });
+
+
         for (Demon demon : demons) {
-            if (demon.getSkills().contains(skillName) || demon.getSource().contains(skillName)) {
+            if (skillsChecked && demon.getSkills().contains(skillName) ||
+                    sourceChecked && demon.getSource().contains(skillName)) {
                 results.add(demon.getName());
             }
         }
@@ -129,6 +149,7 @@ public class SkillActivity extends AppCompatActivity {
 
     public interface ClickListener {
         void onClick(View view, int position);
+
         void onLongClick(View view, int position);
     }
 
