@@ -11,13 +11,13 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHolder> {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
     private LayoutInflater inflater;
     private ArrayList<String> results;
     private ArrayList<String> itemList;
 
-    SearchAdapter(Context ctx, ArrayList<String> results) {
+    RecyclerViewAdapter(Context ctx, ArrayList<String> results) {
 
         inflater = LayoutInflater.from(ctx);
         this.results = results;
@@ -27,13 +27,13 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
 
     @NonNull
     @Override
-    public SearchAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.recycler_item, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SearchAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerViewAdapter.MyViewHolder holder, int position) {
         holder.result.setText(results.get(position));
     }
 

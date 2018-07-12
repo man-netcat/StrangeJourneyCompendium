@@ -38,17 +38,17 @@ public class Skill
 
     public void setRank(int rank) { this.rank = rank; }
 
-    private Integer accuracy;
+    private int accuracy;
 
-    public Integer getAccuracy() { return this.accuracy; }
+    public int getAccuracy() { return this.accuracy; }
 
-    public void setAccuracy(Integer accuracy) { this.accuracy = accuracy; }
+    public void setAccuracy(int accuracy) { this.accuracy = accuracy; }
 
-    private Integer power;
+    private int power;
 
-    public Integer getPower() { return this.power; }
+    public int getPower() { return this.power; }
 
-    public void setPower(Integer power) { this.power = power; }
+    public void setPower(int power) { this.power = power; }
 
     private String inherit;
 

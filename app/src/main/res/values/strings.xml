@@ -26,6 +26,20 @@
     <string name="attack">Attack</string>
     <string name="attributes">no special attributes</string>
     <string name="logo">Logo</string>
-    <string name="search_demon_by_name">Search Demon by Name</string>
-    <string name="search_demon_by_skill">Search Demon by Skill</string>
+    <string name="search_demon_by_name">Search Demon</string>
+    <string name="search_demon_by_skill">Search Skill</string>
+    <string name="cost">Cost</string>
+    <string name="effect">Effect</string>
+    <string name="element">Element</string>
+    <string name="rank">Rank</string>
+    <string name="accuracy">Accuracy</string>
+    <string name="power">Power</string>
+    <string name="inherit">Inherit</string>
+    <string name="demons">Demons that learn </string>
+    <string name="noAccuracy">Accuracy: none</string>
+    <string name="noRank">Rank: none</string>
+    <string name="noCost">Cost: none</string>
+    <string name="noPower">Power: none</string>
+    <string name="noInherit">Inherit: none</string>
+    <string name="demon_array">Demon Array</string>
 </resources>

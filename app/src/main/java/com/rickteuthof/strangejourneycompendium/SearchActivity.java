@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class SearchActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
     public static String searchType;
     public static ArrayList<String> results;
-    private SearchAdapter adapter;
+    private RecyclerViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         } else {
             results = MainActivity.demonNames;
         }
-        adapter = new SearchAdapter(this, results);
+        adapter = new RecyclerViewAdapter(this, results);
         rv.setAdapter(adapter);
         rv.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
         rv.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), rv, new ClickListener() {
