@@ -3,6 +3,7 @@ package com.rickteuthof.strangejourneycompendium;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,7 +22,13 @@ public class DemonActivity extends AppCompatActivity {
         setTextViews(demon);
 
         ImageView sprite = findViewById(R.id.placeholder);
-        int resID = getResources().getIdentifier(name.toLowerCase(), "drawable", getPackageName());
+        String imageName = name.toLowerCase()
+                .replace(' ', '_')
+                .replace('-', '_')
+                .replace("", "0")
+                .replace("\'", "1");
+        Log.d("test", imageName);
+        int resID = getResources().getIdentifier(imageName, "drawable", getPackageName());
         if (resID != 0) {
             sprite.setImageResource(resID);
         }
