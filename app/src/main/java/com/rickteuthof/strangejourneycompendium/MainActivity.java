@@ -26,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initData();
+        handleButtons();
+    }
+
+    public void initData() {
         // Create InputStreams and BufferedReaders for JSON files.
         InputStream is1 = getResources().openRawResource(R.raw.demon_data);
         InputStream is2 = getResources().openRawResource(R.raw.skill_data);
@@ -42,18 +47,21 @@ public class MainActivity extends AppCompatActivity {
 
         // Create arrays for demon names and skill names for convenient access.
         demonNames = new ArrayList<>();
+        skillNames = new ArrayList<>();
         for (Demon demon : demons) {
             demonNames.add(demon.getName());
         }
         Collections.sort(demonNames);
 
-        skillNames = new ArrayList<>();
         for (Skill skill : skills) {
             skillNames.add(skill.getName());
         }
         Collections.sort(skillNames);
+    }
 
+    public void handleButtons() {
         Button searchDemon = findViewById(R.id.searchDemon);
+        Button searchSkill = findViewById(R.id.searchSkill);
         searchDemon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(obj);
             }
         });
-        Button searchSkill = findViewById(R.id.searchSkill);
         searchSkill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

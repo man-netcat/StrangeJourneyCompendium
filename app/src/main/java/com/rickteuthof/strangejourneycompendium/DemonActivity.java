@@ -3,7 +3,6 @@ package com.rickteuthof.strangejourneycompendium;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,26 +16,11 @@ public class DemonActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demon);
+
         Demon demon = getCurrentDemon(name);
 
-        setTextViews(demon);
-
-        ImageView sprite = findViewById(R.id.placeholder);
-        String imageName = name.toLowerCase()
-                .replace(' ', '_')
-                .replace('-', '_');
-        if (imageName.equals("long")) {
-            // long is a reserved keyword...
-            imageName = "long_";
-        } else if (imageName.equals("kamapua'a")) {
-            // ugh why does it need to have the stupid apostrophe
-            imageName = "kamapua_a";
-        }
-        Log.d("test", imageName);
-        int resID = getResources().getIdentifier(imageName, "drawable", getPackageName());
-        if (resID != 0) {
-            sprite.setImageResource(resID);
-        }
+        handleTextViews(demon);
+        handleImageView();
     }
 
     public Demon getCurrentDemon(String name) {
@@ -48,7 +32,7 @@ public class DemonActivity extends AppCompatActivity {
         return null;
     }
 
-    public void setTextViews(Demon demon) {
+    public void handleTextViews(Demon demon) {
         // Define TextView objects
         TextView nameView = findViewById(R.id.demon_name);
         TextView raceView = findViewById(R.id.demon_race);
@@ -157,6 +141,24 @@ public class DemonActivity extends AppCompatActivity {
             attackView.setText(attackViewString.toString());
         } else {
             attackView.setText(R.string.attributes);
+        }
+    }
+
+    public void handleImageView() {
+        ImageView sprite = findViewById(R.id.placeholder);
+        String imageName = name.toLowerCase()
+                .replace(' ', '_')
+                .replace('-', '_');
+        if (imageName.equals("long")) {
+            // long is a reserved keyword...
+            imageName = "long_";
+        } else if (imageName.equals("kamapua'a")) {
+            // ugh why does it need to have the stupid apostrophe
+            imageName = "kamapua_a";
+        }
+        int resID = getResources().getIdentifier(imageName, "drawable", getPackageName());
+        if (resID != 0) {
+            sprite.setImageResource(resID);
         }
     }
 }

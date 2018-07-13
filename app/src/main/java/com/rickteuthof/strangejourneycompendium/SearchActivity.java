@@ -23,6 +23,11 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        handleRecyclerView();
+        handleSearchView();
+    }
+
+    public void handleRecyclerView() {
         RecyclerView rv = findViewById(R.id.recyclerView);
         results = new ArrayList<>();
         if (searchType.equals("skill")) {
@@ -52,7 +57,9 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
 
             }
         }));
+    }
 
+    public void handleSearchView() {
         SearchView s = findViewById(R.id.searchBar);
         s.setOnQueryTextListener(this);
     }
