@@ -63,8 +63,26 @@ public class DemonActivity extends AppCompatActivity {
         TextView ailmentView = findViewById(R.id.demon_ailments);
         TextView inheritanceView = findViewById(R.id.demon_inherits);
         TextView attackView = findViewById(R.id.demon_attack);
+        TextView lvlView = findViewById(R.id.demon_lvl);
+        TextView hpView = findViewById(R.id.demon_hp);
+        TextView mpView = findViewById(R.id.demon_mp);
+        TextView stView = findViewById(R.id.demon_st);
+        TextView maView = findViewById(R.id.demon_ma);
+        TextView viView = findViewById(R.id.demon_vi);
+        TextView agView = findViewById(R.id.demon_ag);
+        TextView luView = findViewById(R.id.demon_lu);
+
         nameView.setText(demon.getName());
         raceView.setText(demon.getRace());
+        lvlView.setText(String.format("%s", Integer.toString((int)demon.getLvl())));
+        ArrayList<Integer> stats = demon.getStats();
+        hpView.setText(String.format("%s", Integer.toString(stats.get(0))));
+        mpView.setText(String.format("%s", Integer.toString(stats.get(1))));
+        stView.setText(String.format("%s", Integer.toString(stats.get(2))));
+        maView.setText(String.format("%s", Integer.toString(stats.get(3))));
+        viView.setText(String.format("%s", Integer.toString(stats.get(4))));
+        agView.setText(String.format("%s", Integer.toString(stats.get(5))));
+        luView.setText(String.format("%s", Integer.toString(stats.get(6))));
 
         // Handle alignment
         String alignment = demon.getAlign();

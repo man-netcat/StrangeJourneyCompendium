@@ -1,26 +1,24 @@
 package com.rickteuthof.strangejourneycompendium;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class SkillActivity extends AppCompatActivity {
     public static String name;
     public final Skill[] skills = MainActivity.skills;
     public static boolean skillsChecked = true;
     public static boolean sourceChecked = true;
+    private SkillAdapter adapter;
+    public static ArrayList<String> results;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +26,46 @@ public class SkillActivity extends AppCompatActivity {
         setContentView(R.layout.activity_skill);
         Skill skill = getCurrentSkill(name);
         setTextViews(skill);
+        RecyclerView rv = findViewById(R.id.skill_demons);
+        results = new ArrayList<>();
+        results.addAll(MainActivity.demonNames);
+        adapter = new SkillAdapter(this, results);
+        rv.setAdapter(adapter);
+        rv.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+        rv.addOnItemTouchListener(new SearchActivity.RecyclerTouchListener(getApplicationContext(), rv, new SearchActivity.ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                DemonActivity.name = results.get(position);
+                Intent obj = new Intent(SkillActivity.this, DemonActivity.class);
+                startActivity(obj);
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
+        adapter.filter(name);
+        Switch skills = findViewById(R.id.skill_switch);
+        Switch source = findViewById(R.id.source_switch);
+        skills.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                skillsChecked = isChecked;
+                adapter.filter(name);
+            }
+        });
+
+        source.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                sourceChecked = isChecked;
+                adapter.filter(name);
+            }
+        });
     }
 
-    public Skill getCurrentSkill(String name) {
+    public Skill getCurrentSkill(String skillName) {
         for (Skill skill : skills) {
-            if (skill.getName().equals(name)) {
+            if (skill.getName().equals(skillName)) {
                 return skill;
             }
         }
@@ -40,7 +73,7 @@ public class SkillActivity extends AppCompatActivity {
     }
 
     public void setTextViews(Skill skill) {
-        TextView nameView = findViewById(R.id.skill_name);
+        TextView skillNameView = findViewById(R.id.skill_name);
         TextView costView = findViewById(R.id.skill_cost);
         TextView effectView = findViewById(R.id.skill_effect);
         TextView elementView = findViewById(R.id.skill_element);
@@ -50,7 +83,7 @@ public class SkillActivity extends AppCompatActivity {
         TextView inheritView = findViewById(R.id.skill_inherit);
         TextView demonStringView = findViewById(R.id.demon_string);
 
-        nameView.setText(String.format("Name: %s", skill.getName()));
+        skillNameView.setText(String.format("Name: %s", skill.getName()));
 
         int cost = skill.getCost();
         if (cost != 0) {
@@ -91,107 +124,5 @@ public class SkillActivity extends AppCompatActivity {
         }
 
         demonStringView.append(" " + name + ":");
-
-        ArrayList<String> demons = getDemons(name);
-        handleRecyclerView(demons);
-    }
-
-    public ArrayList<String> getDemons(String skillName) {
-        ArrayList<String> results = new ArrayList<>();
-        Demon[] demons = MainActivity.demons;
-
-        Switch skills = findViewById(R.id.skill_switch);
-        Switch source = findViewById(R.id.source_switch);
-
-        skills.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                skillsChecked = isChecked;
-            }
-        });
-
-        source.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                sourceChecked = isChecked;
-            }
-        });
-
-
-        for (Demon demon : demons) {
-            if (skillsChecked && demon.getSkills().contains(skillName) ||
-                    sourceChecked && demon.getSource().contains(skillName)) {
-                results.add(demon.getName());
-            }
-        }
-        Collections.sort(results);
-        return results;
-    }
-
-    public void handleRecyclerView(final ArrayList<String> demonList) {
-        RecyclerView rv = findViewById(R.id.skill_demons);
-
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, demonList);
-        rv.setAdapter(adapter);
-        rv.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
-        rv.addOnItemTouchListener(new SearchActivity.RecyclerTouchListener(getApplicationContext(), rv, new SearchActivity.ClickListener() {
-            @Override
-            public void onClick(View view, int position) {
-                DemonActivity.name = demonList.get(position);
-                Intent obj = new Intent(SkillActivity.this, DemonActivity.class);
-                startActivity(obj);
-            }
-
-            @Override
-            public void onLongClick(View view, int position) {
-
-            }
-        }));
-    }
-
-    public interface ClickListener {
-        void onClick(View view, int position);
-
-        void onLongClick(View view, int position);
-    }
-
-    static class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
-
-        private GestureDetector gestureDetector;
-        private SearchActivity.ClickListener clickListener;
-
-        RecyclerTouchListener(Context context, final RecyclerView recyclerView, final SearchActivity.ClickListener clickListener) {
-            this.clickListener = clickListener;
-            gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
-                @Override
-                public boolean onSingleTapUp(MotionEvent e) {
-                    return true;
-                }
-
-                @Override
-                public void onLongPress(MotionEvent e) {
-                    View child = recyclerView.findChildViewUnder(e.getX(), e.getY());
-                    if (child != null && clickListener != null) {
-                        clickListener.onLongClick(child, recyclerView.getChildPosition(child));
-                    }
-                }
-            });
-        }
-
-        @Override
-        public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
-
-            View child = rv.findChildViewUnder(e.getX(), e.getY());
-            if (child != null && clickListener != null && gestureDetector.onTouchEvent(e)) {
-                clickListener.onClick(child, rv.getChildPosition(child));
-            }
-            return false;
-        }
-
-        @Override
-        public void onTouchEvent(RecyclerView rv, MotionEvent e) {
-        }
-
-        @Override
-        public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-        }
     }
 }

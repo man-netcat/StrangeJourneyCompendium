@@ -9,31 +9,26 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
+public class SkillAdapter extends RecyclerView.Adapter<SkillAdapter.MyViewHolder> {
 
     private LayoutInflater inflater;
-    private ArrayList<String> results;
-    private ArrayList<String> itemList;
+    private static ArrayList<String> results;
 
-    RecyclerViewAdapter(Context ctx, ArrayList<String> results) {
-
+    SkillAdapter(Context ctx, ArrayList<String> results) {
         inflater = LayoutInflater.from(ctx);
-        this.results = results;
-        this.itemList = new ArrayList<>();
-        this.itemList.addAll(SearchActivity.results);
+        SkillAdapter.results = results;
     }
 
     @NonNull
     @Override
-    public RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public SkillAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.recycler_item, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SkillAdapter.MyViewHolder holder, int position) {
         holder.result.setText(results.get(position));
     }
 
@@ -53,15 +48,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public void filter(String query) {
-        query = query.toLowerCase(Locale.getDefault());
-        SearchActivity.results.clear();
-        if (query.length() == 0) {
-            SearchActivity.results.addAll(itemList);
-        } else {
-            for (String item : itemList) {
-                if (item.toLowerCase(Locale.getDefault()).contains(query)) {
-                    SearchActivity.results.add(item);
-                }
+        Demon[] demons = MainActivity.demons;
+        SkillActivity.results.clear();
+        for (Demon demon : demons) {
+            if (SkillActivity.skillsChecked && demon.getSkills().contains(query) ||
+                    SkillActivity.sourceChecked && demon.getSource().contains(query)) {
+                results.add(demon.getName());
             }
         }
         notifyDataSetChanged();

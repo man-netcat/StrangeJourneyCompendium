@@ -42,4 +42,12 @@
     <string name="noPower">Power: none</string>
     <string name="noInherit">Inherit: none</string>
     <string name="demon_array">Demon Array</string>
+    <string name="lvl">Lvl</string>
+    <string name="hp">HP</string>
+    <string name="mp">MP</string>
+    <string name="st">St</string>
+    <string name="ma">Ma</string>
+    <string name="vi">Vi</string>
+    <string name="ag">Ag</string>
+    <string name="lu">Lu</string>
 </resources>

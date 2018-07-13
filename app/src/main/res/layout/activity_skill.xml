@@ -65,13 +65,6 @@
             android:layout_height="wrap_content"
             android:text="@string/demons" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/skill_demons"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </android.support.v7.widget.RecyclerView>
-
         <Switch
             android:id="@+id/skill_switch"
             android:layout_width="match_parent"
@@ -85,6 +78,13 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="Search Source" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/skill_demons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
 
     </LinearLayout>
 </ScrollView>

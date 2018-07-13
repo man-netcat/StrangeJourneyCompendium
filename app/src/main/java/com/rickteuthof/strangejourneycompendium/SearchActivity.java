@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class SearchActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
     public static String searchType;
     public static ArrayList<String> results;
-    private RecyclerViewAdapter adapter;
+    private SearchAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +24,13 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         setContentView(R.layout.activity_search);
 
         RecyclerView rv = findViewById(R.id.recyclerView);
-
+        results = new ArrayList<>();
         if (searchType.equals("skill")) {
-            results = MainActivity.skillNames;
+            results.addAll(MainActivity.skillNames);
         } else {
-            results = MainActivity.demonNames;
+            results.addAll(MainActivity.demonNames);
         }
-        adapter = new RecyclerViewAdapter(this, results);
+        adapter = new SearchAdapter(this, results);
         rv.setAdapter(adapter);
         rv.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
         rv.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), rv, new ClickListener() {
