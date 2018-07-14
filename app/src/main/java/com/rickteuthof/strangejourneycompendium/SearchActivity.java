@@ -14,9 +14,9 @@ import android.widget.SearchView;
 import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
-    public static String searchType;
+    public static String searchType = "skill";
     public static ArrayList<String> results;
-    private SearchAdapter adapter;
+    private static SearchAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

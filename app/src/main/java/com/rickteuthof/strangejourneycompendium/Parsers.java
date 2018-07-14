@@ -7,27 +7,25 @@ public class Parsers {
         String[] elements = {"phys: ", "gun: ", "fire: ", "ice: ", "elec: ", "wind: ", "expel: ",
                 "curse: "};
         ArrayList<String> parsed = new ArrayList<>(8);
-        for (int i = 0; i < 8; i++) {
-            String curElement = elements[i];
-            char cur = resists.charAt(i);
+        for (char cur : resists.toCharArray() ) {
             switch (cur) {
                 case 's':
-                    parsed.add(curElement + "strong");
+                    parsed.add("strong");
                     break;
                 case 'w':
-                    parsed.add(curElement + "weak");
+                    parsed.add("weak");
                     break;
                 case 'n':
-                    parsed.add(curElement + "null");
+                    parsed.add("null");
                     break;
                 case 'd':
-                    parsed.add(curElement + "drain");
+                    parsed.add("drain");
                     break;
                 case 'r':
-                    parsed.add(curElement + "repel");
+                    parsed.add("repel");
                     break;
                 default:
-                    parsed.add(curElement + "-");
+                    parsed.add("-");
                     break;
             }
         }
@@ -38,26 +36,26 @@ public class Parsers {
     public static ArrayList<String> parseAilments(String ailmentRes) {
         ArrayList<String> parsed = new ArrayList<>(9);
         if (ailmentRes == null) {
-            parsed.add("no special resistances");
+            for (int i = 0; i < 9; i++) {
+                parsed.add("-");
+            }
             return parsed;
         }
         String[] ailments = {"poison: ", "paralyze: ", "stone: ", "strain: ", "sleep: ", "charm: ",
                 "mute: ", "fear: ", "bomb: "};
-        for (int i = 0; i < 9; i++) {
-            String curAilment = ailments[i];
-            char cur = ailmentRes.charAt(i);
+        for (char cur : ailmentRes.toCharArray()) {
             switch (cur) {
                 case 's':
-                    parsed.add(curAilment + "strong");
+                    parsed.add("strong");
                     break;
                 case 'w':
-                    parsed.add(curAilment + "weak");
+                    parsed.add("weak");
                     break;
                 case 'n':
-                    parsed.add(curAilment + "null");
+                    parsed.add("null");
                     break;
                 default:
-                    parsed.add(curAilment + "-");
+                    parsed.add("-");
                     break;
             }
         }

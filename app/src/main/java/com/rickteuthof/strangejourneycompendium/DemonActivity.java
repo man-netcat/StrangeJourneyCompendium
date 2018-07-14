@@ -1,8 +1,10 @@
 package com.rickteuthof.strangejourneycompendium;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -37,36 +39,67 @@ public class DemonActivity extends AppCompatActivity {
         TextView nameView = findViewById(R.id.demon_name);
         TextView raceView = findViewById(R.id.demon_race);
         TextView alignmentView = findViewById(R.id.demon_alignment);
-        TextView skill1View = findViewById(R.id.demon_skill_1);
-        TextView skill2View = findViewById(R.id.demon_skill_2);
-        TextView skill3View = findViewById(R.id.demon_skill_3);
-        TextView source1View = findViewById(R.id.demon_source_1);
-        TextView source2View = findViewById(R.id.demon_source_2);
-        TextView source3View = findViewById(R.id.demon_source_3);
-        TextView resistanceView = findViewById(R.id.demon_resistances);
-        TextView ailmentView = findViewById(R.id.demon_ailments);
+        TextView[] skills = new TextView[3];
+        TextView[] source = new TextView[3];
+        TextView[] resistance = new TextView[8];
+        TextView[] ailment = new TextView[9];
+        TextView[] stats = new TextView[7];
+        skills[0] = findViewById(R.id.demon_skill_1);
+        skills[1] = findViewById(R.id.demon_skill_2);
+        skills[2] = findViewById(R.id.demon_skill_3);
+        source[0] = findViewById(R.id.demon_source_1);
+        source[1] = findViewById(R.id.demon_source_2);
+        source[2] = findViewById(R.id.demon_source_3);
         TextView inheritanceView = findViewById(R.id.demon_inherits);
         TextView attackView = findViewById(R.id.demon_attack);
         TextView lvlView = findViewById(R.id.demon_lvl);
-        TextView hpView = findViewById(R.id.demon_hp);
-        TextView mpView = findViewById(R.id.demon_mp);
-        TextView stView = findViewById(R.id.demon_st);
-        TextView maView = findViewById(R.id.demon_ma);
-        TextView viView = findViewById(R.id.demon_vi);
-        TextView agView = findViewById(R.id.demon_ag);
-        TextView luView = findViewById(R.id.demon_lu);
+
+        stats[0] = findViewById(R.id.demon_hp);
+        stats[1] = findViewById(R.id.demon_mp);
+        stats[2] = findViewById(R.id.demon_st);
+        stats[3] = findViewById(R.id.demon_ma);
+        stats[4] = findViewById(R.id.demon_vi);
+        stats[5] = findViewById(R.id.demon_ag);
+        stats[6] = findViewById(R.id.demon_lu);
+
+        resistance[0] = findViewById(R.id.resist_phys);
+        resistance[1] = findViewById(R.id.resist_gun);
+        resistance[2] = findViewById(R.id.resist_fire);
+        resistance[3] = findViewById(R.id.resist_ice);
+        resistance[4] = findViewById(R.id.resist_elec);
+        resistance[5] = findViewById(R.id.resist_wind);
+        resistance[6] = findViewById(R.id.resist_expel);
+        resistance[7] = findViewById(R.id.resist_curse);
+
+        ailment[0] = findViewById(R.id.resist_poison);
+        ailment[1] = findViewById(R.id.resist_paralyze);
+        ailment[2] = findViewById(R.id.resist_stone);
+        ailment[3] = findViewById(R.id.resist_strain);
+        ailment[4] = findViewById(R.id.resist_sleep);
+        ailment[5] = findViewById(R.id.resist_charm);
+        ailment[6] = findViewById(R.id.resist_mute);
+        ailment[7] = findViewById(R.id.resist_fear);
+        ailment[8] = findViewById(R.id.resist_bomb);
 
         nameView.setText(demon.getName());
         raceView.setText(demon.getRace());
         lvlView.setText(String.format("%s", Integer.toString((int)demon.getLvl())));
-        ArrayList<Integer> stats = demon.getStats();
-        hpView.setText(String.format("%s", Integer.toString(stats.get(0))));
-        mpView.setText(String.format("%s", Integer.toString(stats.get(1))));
-        stView.setText(String.format("%s", Integer.toString(stats.get(2))));
-        maView.setText(String.format("%s", Integer.toString(stats.get(3))));
-        viView.setText(String.format("%s", Integer.toString(stats.get(4))));
-        agView.setText(String.format("%s", Integer.toString(stats.get(5))));
-        luView.setText(String.format("%s", Integer.toString(stats.get(6))));
+
+        ArrayList<Integer> statArray = demon.getStats();
+        ArrayList<String> resistanceArray = Parsers.parseResistance(demon.getResists());
+        ArrayList<String> ailmentArray = Parsers.parseAilments(demon.getAilments());
+
+        for (int i = 0; i < 7; i++) {
+            stats[i].setText(String.format("%s", Integer.toString(statArray.get(i))));
+        }
+
+        for (int i = 0; i < 8; i++) {
+            resistance[i].setText(resistanceArray.get(i));
+        }
+
+        for (int i = 0; i < 9; i++) {
+            ailment[i].setText(ailmentArray.get(i));
+        }
 
         // Handle alignment
         String alignment = demon.getAlign();
@@ -80,48 +113,34 @@ public class DemonActivity extends AppCompatActivity {
         // Handle skills
         ArrayList<String> skillSet = demon.getSkills();
         int skillLength = skillSet.size();
-        skill1View.setText(skillSet.get(0));
-        if (skillLength > 2) {
-            skill2View.setText(skillSet.get(1));
-            skill3View.setText(skillSet.get(2));
-        } else if (skillLength > 1) {
-            skill2View.setText(skillSet.get(1));
-            skill3View.setText("");
-        } else {
-            skill2View.setText("");
-            skill3View.setText("");
+        for (int i = 0; i < skillLength; i++) {
+            skills[i].setText(skillSet.get(i));
         }
 
         // Handle sources
-        ArrayList<String> source = demon.getSource();
-        int sourceLength = source.size();
-        source1View.setText(source.get(0));
-        if (sourceLength > 2) {
-            source2View.setText(source.get(1));
-            source3View.setText(source.get(2));
-        } else if (sourceLength > 1) {
-            source2View.setText(source.get(1));
-            source3View.setText("");
-        } else {
-            source2View.setText("");
-            source3View.setText("");
+        ArrayList<String> sourceSet = demon.getSource();
+        int sourceLength = sourceSet.size();
+        for (int i = 0; i < sourceLength; i++) {
+            source[i].setText(sourceSet.get(i));
         }
 
-        // Handle resistances
-        StringBuilder resistanceViewString = new StringBuilder();
-        ArrayList<String> resists = Parsers.parseResistance(demon.getResists());
-        for (String resistance : resists) {
-            resistanceViewString.append(resistance).append("\n");
-        }
-        resistanceView.setText(resistanceViewString.toString());
+        View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String viewText = ((TextView) v).getText().toString();
+                if (!viewText.equals("")) {
+                    SkillActivity.name = viewText;
+                    Intent obj = new Intent(DemonActivity.this, SkillActivity.class);
+                    startActivity(obj);
+                }
+            }
+        };
 
-        // Handle ailments
-        StringBuilder ailmentViewString = new StringBuilder();
-        ArrayList<String> ailments = Parsers.parseAilments(demon.getAilments());
-        for (String ailment : ailments) {
-            ailmentViewString.append(ailment).append("\n");
+        // Set OnClickListeners for TextViews
+        for (int i = 0; i < 3; i++) {
+            skills[i].setOnClickListener(listener);
+            source[i].setOnClickListener(listener);
         }
-        ailmentView.setText(ailmentViewString.toString());
 
         // Handle inheritance
         StringBuilder inheritanceViewString = new StringBuilder();

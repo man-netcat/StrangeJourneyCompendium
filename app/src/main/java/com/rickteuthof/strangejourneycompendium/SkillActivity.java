@@ -1,24 +1,22 @@
 package com.rickteuthof.strangejourneycompendium;
 
         import android.content.Intent;
-        import android.os.Bundle;
-        import android.support.v7.app.AppCompatActivity;
-        import android.support.v7.widget.LinearLayoutManager;
-        import android.support.v7.widget.RecyclerView;
-        import android.view.View;
-        import android.widget.CompoundButton;
-        import android.widget.Switch;
-        import android.widget.TextView;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.TextView;
 
-        import java.util.ArrayList;
+import java.util.ArrayList;
 
 public class SkillActivity extends AppCompatActivity {
     public static String name;
-    public final Skill[] skills = MainActivity.skills;
+    public static Skill[] skills = MainActivity.skills;
     public static boolean skillsChecked = true;
     public static boolean sourceChecked = true;
-    private SkillAdapter adapter;
-    public static ArrayList<String> results;
+    public static ArrayList<String> skillResults;
+    public static ArrayList<String> sourceResults;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +26,6 @@ public class SkillActivity extends AppCompatActivity {
         Skill skill = getCurrentSkill(name);
         handleTextViews(skill);
         handleRecyclerView();
-        handleSwitches();
     }
 
     public Skill getCurrentSkill(String skillName) {
@@ -51,60 +48,72 @@ public class SkillActivity extends AppCompatActivity {
         TextView inheritView = findViewById(R.id.skill_inherit);
         TextView demonStringView = findViewById(R.id.demon_string);
 
-        skillNameView.setText(String.format("Name: %s", skill.getName()));
+        skillNameView.setText(skill.getName());
 
         int cost = skill.getCost();
         if (cost != 0) {
-            costView.setText(String.format("Cost: %s", Integer.toString(cost - 1000)));
+            costView.setText(String.format("%s", Integer.toString(cost - 1000)));
         } else {
-            costView.setText(R.string.noCost);
+            costView.setText(R.string.none);
         }
 
-        effectView.setText(String.format("Effect: %s", skill.getEffect()));
-        elementView.setText(String.format("Element: %s", skill.getElement()));
+        effectView.setText(String.format("%s", skill.getEffect()));
+        elementView.setText(String.format("%s", skill.getElement()));
 
         int rank = skill.getRank();
         if (rank != 0) {
-            rankView.setText(String.format("Rank: %s", Integer.toString(rank)));
+            rankView.setText(String.format("%s", Integer.toString(rank)));
         } else {
-            rankView.setText(R.string.noRank);
+            rankView.setText(R.string.none);
         }
 
         int accuracy = skill.getAccuracy();
         if (accuracy != 0) {
-            accuracyView.setText(String.format("Accuracy: %s", Integer.toString(accuracy)));
+            accuracyView.setText(String.format("%s", Integer.toString(accuracy)));
         } else {
-            accuracyView.setText(R.string.noAccuracy);
+            accuracyView.setText(R.string.none);
         }
 
         int power = skill.getPower();
         if (power != 0) {
-            powerView.setText(String.format("Power: %s", Integer.toString(power)));
+            powerView.setText(String.format("%s", Integer.toString(power)));
         } else {
-            powerView.setText(R.string.noPower);
+            powerView.setText(R.string.none);
         }
 
         String inherit = skill.getInherit();
         if (inherit != null) {
-            inheritView.setText(String.format("Inherit: %s", inherit));
+            inheritView.setText(String.format("%s", inherit));
         } else {
-            inheritView.setText(R.string.noInherit);
+            inheritView.setText(R.string.none);
         }
 
         demonStringView.append(" " + name + ":");
     }
 
     public void handleRecyclerView() {
-        results = new ArrayList<>();
-        results.addAll(MainActivity.demonNames);
-        RecyclerView rv = findViewById(R.id.skill_demons);
-        adapter = new SkillAdapter(this, results);
-        rv.setAdapter(adapter);
-        rv.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
-        rv.addOnItemTouchListener(new SearchActivity.RecyclerTouchListener(getApplicationContext(), rv, new SearchActivity.ClickListener() {
+        skillResults = new ArrayList<>();
+        sourceResults = new ArrayList<>();
+
+        skillResults.addAll(MainActivity.demonNames);
+        sourceResults.addAll(MainActivity.demonNames);
+
+        RecyclerView skillRecyclerView = findViewById(R.id.skill_demons);
+        RecyclerView sourceRecyclerView = findViewById(R.id.source_demons);
+
+        SkillAdapter skillAdapter = new SkillAdapter(this, skillResults);
+        SourceAdapter sourceAdapter = new SourceAdapter(this, sourceResults);
+
+        skillRecyclerView.setAdapter(skillAdapter);
+        sourceRecyclerView.setAdapter(sourceAdapter);
+
+        skillRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+        sourceRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+
+        skillRecyclerView.addOnItemTouchListener(new SearchActivity.RecyclerTouchListener(getApplicationContext(), skillRecyclerView, new SearchActivity.ClickListener() {
             @Override
             public void onClick(View view, int position) {
-                DemonActivity.name = results.get(position);
+                DemonActivity.name = skillResults.get(position);
                 Intent obj = new Intent(SkillActivity.this, DemonActivity.class);
                 startActivity(obj);
             }
@@ -114,24 +123,21 @@ public class SkillActivity extends AppCompatActivity {
 
             }
         }));
-        adapter.filter(name);
-    }
-
-    public void handleSwitches() {
-        Switch skillSwitch = findViewById(R.id.skill_switch);
-        Switch sourceSwitch = findViewById(R.id.source_switch);
-        skillSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                skillsChecked = isChecked;
-                adapter.filter(name);
+        sourceRecyclerView.addOnItemTouchListener(new SearchActivity.RecyclerTouchListener(getApplicationContext(), sourceRecyclerView, new SearchActivity.ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                DemonActivity.name = sourceResults.get(position);
+                Intent obj = new Intent(SkillActivity.this, DemonActivity.class);
+                startActivity(obj);
             }
-        });
 
-        sourceSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                sourceChecked = isChecked;
-                adapter.filter(name);
+            @Override
+            public void onLongClick(View view, int position) {
+
             }
-        });
+        }));
+
+        skillAdapter.filter(name);
+        sourceAdapter.filter(name);
     }
 }

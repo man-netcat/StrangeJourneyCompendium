@@ -10,25 +10,26 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class SkillAdapter extends RecyclerView.Adapter<SkillAdapter.MyViewHolder> {
+public class SourceAdapter extends RecyclerView.Adapter<SourceAdapter.MyViewHolder> {
 
     private LayoutInflater inflater;
     private static ArrayList<String> results;
 
-    SkillAdapter(Context ctx, ArrayList<String> results) {
+    SourceAdapter(Context ctx, ArrayList<String> results) {
         inflater = LayoutInflater.from(ctx);
-        SkillAdapter.results = results;
+        SourceAdapter.results = results;
+
     }
 
     @NonNull
     @Override
-    public SkillAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public SourceAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.recycler_item, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SkillAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SourceAdapter.MyViewHolder holder, int position) {
         holder.result.setText(results.get(position));
     }
 
@@ -49,9 +50,9 @@ public class SkillAdapter extends RecyclerView.Adapter<SkillAdapter.MyViewHolder
 
     public void filter(String query) {
         Demon[] demons = MainActivity.demons;
-        SkillActivity.skillResults.clear();
+        SkillActivity.sourceResults.clear();
         for (Demon demon : demons) {
-            if (SkillActivity.skillsChecked && demon.getSkills().contains(query)) {
+            if (SkillActivity.sourceChecked && demon.getSource().contains(query)) {
                 results.add(demon.getName());
             }
         }
