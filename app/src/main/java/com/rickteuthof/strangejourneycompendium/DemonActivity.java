@@ -169,7 +169,7 @@ public class DemonActivity extends AppCompatActivity {
                 .replace(' ', '_')
                 .replace('-', '_');
         if (imageName.equals("long")) {
-            // long is a reserved keyword...
+            // long is a reserved keyword...k
             imageName = "long_";
         } else if (imageName.equals("kamapua'a")) {
             // ugh why does it need to have the stupid apostrophe
