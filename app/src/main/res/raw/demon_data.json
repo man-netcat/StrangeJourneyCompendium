@@ -58,6 +58,12 @@
       48,
       56,
       43
+    ],
+    "fusion_condition": "Defeat Amon in the Womb of Grief",
+    "special_fusion": [
+      "Sphinx",
+      "Dantalian",
+      "Orias"
     ]
   },
   {
@@ -88,6 +94,12 @@
       20,
       17,
       19
+    ],
+    "fusion_condition": "Defeat Anahita in the Womb of Grief",
+    "special_fusion": [
+      "Power",
+      "Jack Frost",
+      "Azumi"
     ]
   },
   {
@@ -116,6 +128,11 @@
       49,
       45,
       55
+    ],
+    "fusion_condition": "Defeat Anat in EX Mission \"Guardians of the Womb of Grief\"",
+    "special_fusion": [
+      "Tzitzimitl",
+      "Ishtar"
     ]
   },
   {
@@ -145,6 +162,12 @@
       50,
       46,
       43
+    ],
+    "fusion_condition": "Defeat Armaiti in EX Mission \"Mothers' twilight\"",
+    "special_fusion": [
+      "Gemori",
+      "Haoma",
+      "Hariti"
     ]
   },
   {
@@ -174,6 +197,12 @@
       31,
       27,
       26
+    ],
+    "fusion_condition": "Defeat Asura in Delphinus",
+    "special_fusion": [
+      "Pisaca",
+      "Orias",
+      "Kwancha"
     ]
   },
   {
@@ -203,6 +232,11 @@
       61,
       64,
       58
+    ],
+    "fusion_condition": "Defeat Beelzebub in EX Mission \"Louisa Ferre's Gift\"",
+    "special_fusion": [
+      "Seth",
+      "Abaddon"
     ]
   },
   {
@@ -232,6 +266,11 @@
       65,
       61,
       59
+    ],
+    "fusion_condition": "Defeat Belial in EX Mission \"Louisa Ferre's Gift\"",
+    "special_fusion": [
+      "Samael",
+      "Cherub"
     ]
   },
   {
@@ -265,7 +304,8 @@
       40,
       48,
       43
-    ]
+    ],
+    "fusion_condition": "Defeat Black Rider in Fornax with Enemy Search"
   },
   {
     "name":"Cybele",
@@ -297,6 +337,12 @@
       50,
       43,
       46
+    ],
+    "fusion_condition": "Defeat Cybele in EX Mission \"Guardians of the Womb of Grief\"",
+    "special_fusion": [
+      "Tlazolteotl",
+      "Xiuhtecuhtli",
+      "Anzu"
     ]
   },
   {
@@ -327,6 +373,12 @@
       50,
       54,
       58
+    ],
+    "fusion_condition": "Clear new ending",
+    "special_fusion": [
+      "Quetzalcoatl",
+      "Mayahuel",
+      "Anahita"
     ]
   },
   {
@@ -355,7 +407,8 @@
       53,
       44,
       45
-    ]
+    ],
+    "fusion_condition": "Defeat Demonee-ho in EX Mission \"Demonee-ho's boot camp\""
   },
   {
     "name":"Forneus",
@@ -385,6 +438,12 @@
       39,
       33,
       36
+    ],
+    "fusion_condition": "Defeat Forneus in the Womb of Grief",
+    "special_fusion": [
+      "Decarabia",
+      "Kikuri-Hime",
+      "Sui-Ki"
     ]
   },
   {
@@ -413,6 +472,12 @@
       26,
       19,
       21
+    ],
+    "fusion_condition": "Defeat Horkos in Carina",
+    "special_fusion": [
+      "Doppelganger",
+      "Momunofu",
+      "Macabre"
     ]
   },
   {
@@ -445,7 +510,8 @@
       17,
       20,
       16
-    ]
+    ],
+    "fusion_condition": "Rescue from Womb of Grief"
   },
   {
     "name":"Ishtar",
@@ -475,6 +541,12 @@
       29,
       30,
       31
+    ],
+    "fusion_condition": "Defeat Ishtar in the Womb of Grief",
+    "special_fusion": [
+      "Skogsra",
+      "Virtue",
+      "Churel"
     ]
   },
   {
@@ -504,6 +576,12 @@
       40,
       44,
       43
+    ],
+    "fusion_condition": "Defeat Isis in EX Mission \"Guardians of the Womb of Grief\"",
+    "special_fusion": [
+      "Persephone",
+      "Rukh",
+      "Hathor"
     ]
   },
   {
@@ -593,6 +671,12 @@
       52,
       59,
       50
+    ],
+    "fusion_condition": "Defeat Kali in EX Mission \"Guardians of the Womb of Grief\"",
+    "special_fusion": [
+      "Ixtab",
+      "Dakini",
+      "Parvati"
     ]
   },
   {
@@ -649,6 +733,11 @@
       63,
       57,
       64
+    ],
+    "fusion_condition": "Defeat Lucifuge in EX Mission \"Louisa Ferre's Gift\"",
+    "special_fusion": [
+      "Mot",
+      "Alciel"
     ]
   },
   {
@@ -737,6 +826,11 @@
       42,
       47,
       48
+    ],
+    "fusion_condition": "Defeat Maria in the Womb of Grief",
+    "special_fusion": [
+      "Black Maria",
+      "Pallas Athena"
     ]
   },
   {
@@ -767,6 +861,12 @@
       49,
       51,
       54
+    ],
+    "fusion_condition": "Defeat Mastema in Horologium (Chaos Route)",
+    "special_fusion": [
+      "Abaddon",
+      "Cherub",
+      "Throne"
     ]
   },
   {
@@ -831,6 +931,13 @@
       40,
       45,
       46
+    ],
+    "fusion_condition": "Defeat Maya in Grus",
+    "special_fusion": [
+      "Hariti",
+      "Succubus",
+      "Incubus",
+      "Airavata"
     ]
   },
   {
@@ -860,6 +967,12 @@
       19,
       17,
       16
+    ],
+    "fusion_condition": "Defeat Mithras in Bootes",
+    "special_fusion": [
+      "Bifrons",
+      "Fomorian",
+      "Ippon-Datara"
     ]
   },
   {
@@ -891,6 +1004,12 @@
       12,
       11,
       9
+    ],
+    "fusion_condition": "Defeat Morax in Antlia",
+    "special_fusion": [
+      "Oni",
+      "Melchom",
+      "Itsumade"
     ]
   },
   {
@@ -919,7 +1038,8 @@
       13,
       18,
       18
-    ]
+    ],
+    "fusion_condition": "Rescue from Womb of Grief"
   },
   {
     "name":"Nebiros",
@@ -949,6 +1069,11 @@
       57,
       63,
       68
+    ],
+    "fusion_condition": "Defeat Nebiros in EX Mission \"Louisa Ferre's Gift\"",
+    "special_fusion": [
+      "Nergal",
+      "Ometeotl"
     ]
   },
   {
@@ -1008,6 +1133,14 @@
       36,
       32,
       29
+    ],
+    "fusion_condition": "Defeat Ouroboros in Eridanus for the 2nd time",
+    "special_fusion": [
+      "Vouivre",
+      "Basilisk",
+      "Mandrake",
+      "Kwancha",
+      "Dzelarhons"
     ]
   },
   {
@@ -1037,6 +1170,11 @@
       56,
       50,
       47
+    ],
+    "fusion_condition": "Clear Heaven",
+    "special_fusion": [
+      "Aniel",
+      "Kazfiel"
     ]
   },
   {
@@ -1066,6 +1204,11 @@
       43,
       51,
       53
+    ],
+    "fusion_condition": "Defeat in Womb of Grief",
+    "special_fusion": [
+      "Cerberus",
+      "Harpy"
     ]
   },
   {
@@ -1096,7 +1239,8 @@
       42,
       38,
       40
-    ]
+    ],
+    "fusion_condition": "Rescue from Womb of Grief"
   },
   {
     "name":"Tiamat",
@@ -1128,6 +1272,13 @@
       42,
       40,
       40
+    ],
+    "fusion_condition": "Defeat Tiamat in Fornax",
+    "special_fusion": [
+      "Tlaltecuhtli",
+      "Mushussu",
+      "Kingu",
+      "Pabilsag"
     ]
   },
   {
@@ -1222,6 +1373,12 @@
       43,
       46,
       44
+    ],
+    "fusion_condition": "Defeat Volvo in EX Mission \"Guardians of the Womb of Grief\"",
+    "special_fusion": [
+      "Titania",
+      "Diana",
+      "Strigoii"
     ]
   },
   {
@@ -1285,6 +1442,12 @@
       48,
       46,
       51
+    ],
+    "fusion_condition": "Defeat Zaou-Gongen in EX Mission \"Demonee-ho's boot camp\"",
+    "special_fusion": [
+      "Ongyo-Ki",
+      "Yatagarasu",
+      "Koumokuten"
     ]
   },
   {
@@ -1314,6 +1477,13 @@
       44,
       39,
       42
+    ],
+    "fusion_condition": "Defeat Zeus in the Womb of Grief",
+    "special_fusion": [
+      "Wild Hunt",
+      "Oberon",
+      "Anzu",
+      "Throne"
     ]
   },
   {
@@ -1460,7 +1630,8 @@
       23,
       25,
       22
-    ]
+    ],
+    "fusion_condition": "Defeat Alice in EX Mission \"Catch the rabbit!\""
   },
   {
     "name":"Alilat",
@@ -1490,6 +1661,12 @@
       63,
       47,
       54
+    ],
+    "fusion_condition": "Defeat Alilat in EX Mission \"The mother goddess' gravestone\"",
+    "special_fusion": [
+      "Peri",
+      "Azrael",
+      "Israel"
     ]
   },
   {
@@ -1550,7 +1727,8 @@
       51,
       50,
       56
-    ]
+    ],
+    "fusion_condition": "Clear EX Mission \"Marebito, the foreign god\""
   },
   {
     "name":"Ame no Uzume",
@@ -1697,7 +1875,8 @@
       47,
       53,
       49
-    ]
+    ],
+    "fusion_condition": "Defeat Aniel in EX Mission \"Before the holy battle III\""
   },
   {
     "name":"Anubis",
@@ -2022,6 +2201,11 @@
       37,
       36,
       35
+    ],
+    "fusion_condition": "Defeat Asherah in Fornax",
+    "special_fusion": [
+      "Asura",
+      "Valkyrie"
     ]
   },
   {
@@ -2428,7 +2612,8 @@
       47,
       39,
       42
-    ]
+    ],
+    "fusion_condition": "Defeat Bishamonten in EX Mission \"The ever-steeper trial IV\""
   },
   {
     "name":"Black Frost",
@@ -2457,6 +2642,11 @@
       20,
       23,
       17
+    ],
+    "special_fusion": [
+      "Jack Frost",
+      "Pyro Jack",
+      "Incubus"
     ]
   },
   {
@@ -2795,7 +2985,8 @@
       16,
       15,
       15
-    ]
+    ],
+    "fusion_condition": "Defeat Chupacabra in Bootes with Enemy Search A or B"
   },
   {
     "name":"Churel",
@@ -2884,7 +3075,8 @@
       34,
       36,
       26
-    ]
+    ],
+    "fusion_condition": "Clear EX Mission \"A formal search request\""
   },
   {
     "name":"Da Peng",
@@ -3037,7 +3229,8 @@
       14,
       16,
       19
-    ]
+    ],
+    "fusion_condition": "Defeat David in EX Mission \"Escape plan\""
   },
   {
     "name":"Decarabia",
@@ -3096,6 +3289,12 @@
       59,
       60,
       53
+    ],
+    "fusion_condition": "Defeat Demiurge in EX Mission \"False god in chains\"",
+    "special_fusion": [
+      "Metatron",
+      "Hachiman",
+      "Samael"
     ]
   },
   {
@@ -3708,6 +3907,12 @@
       25,
       25,
       22
+    ],
+    "fusion_condition": "Clear EX Mission \"The snowman's revenge\"",
+    "special_fusion": [
+      "Jack Frost",
+      "Tam Lin",
+      "Power"
     ]
   },
   {
@@ -3742,7 +3947,8 @@
       30,
       26,
       30
-    ]
+    ],
+    "fusion_condition": "Defeat Futotama in Bootes with Enemy Search B or in Delphinus with Enemy Search A or B"
   },
   {
     "name":"Fuu-Ki",
@@ -4441,7 +4647,8 @@
       22,
       33,
       24
-    ]
+    ],
+    "fusion_condition": "Defeat Hare of Inaba in Delphinus with Enemy Search A or B"
   },
   {
     "name":"Hariti",
@@ -4692,6 +4899,11 @@
       10,
       18,
       17
+    ],
+    "special_fusion": [
+      "Pixie",
+      "Lilim",
+      "Harpy"
     ]
   },
   {
@@ -4811,6 +5023,12 @@
       50,
       52,
       48
+    ],
+    "special_fusion": [
+      "Gui Xian",
+      "Long",
+      "Feng Huang",
+      "Baihu"
     ]
   },
   {
@@ -5108,7 +5326,8 @@
       35,
       39,
       39
-    ]
+    ],
+    "fusion_condition": "Defeat Jikokuten in EX Mission \"The ever-steeper trial III\""
   },
   {
     "name":"Jueyuan",
@@ -5230,7 +5449,8 @@
       42,
       47,
       51
-    ]
+    ],
+    "fusion_condition":  "Defeat Kama in Horologium with Enemy Search A or B"
   },
   {
     "name":"Kamapua'a",
@@ -5293,7 +5513,8 @@
       23,
       20,
       20
-    ]
+    ],
+    "fusion_condition": "Defeat Kanbari in EX Mission \"Lurker of the toilets\" or in Carina with Enemy Search A or B"
   },
   {
     "name":"Kangiten",
@@ -5324,7 +5545,8 @@
       53,
       51,
       57
-    ]
+    ],
+    "fusion_condition": "Defeat Kangiten in any Sector with Enemy Search C"
   },
   {
     "name":"Karasu Tengu",
@@ -5465,7 +5687,8 @@
       46,
       41,
       44
-    ]
+    ],
+    "fusion_condition": "Defeat Kazfiel in EX Mission \"Before the holy battle III\""
   },
   {
     "name":"Kin-Ki",
@@ -5523,6 +5746,12 @@
       29,
       25,
       28
+    ],
+    "fusion_condition": "Defeat King Frost in Bootes with Enemy Search B or in Eridanus with Enemy Search A or B",
+    "special_fusion":  [
+      "Jack Frost",
+      "Frost Ace",
+      "Black Frost"
     ]
   },
   {
@@ -5584,7 +5813,8 @@
       37,
       40,
       42
-    ]
+    ],
+    "fusion_condition": "Clear EX Mission \"Marebito, the foreign god\" or defeat Kinmamon in Antlia with Enemy Search B or in Fornax with Enemy Search A"
   },
   {
     "name":"Knocker",
@@ -5665,7 +5895,8 @@
       32,
       31,
       29
-    ]
+    ],
+    "fusion_condition": "Defeat Koumokuten in EX Mission \"The ever-steeper trial II\""
   },
   {
     "name":"Kresnik",
@@ -5723,7 +5954,8 @@
       19,
       16,
       19
-    ]
+    ],
+    "fusion_condition": "Defeat Kuda in Carina with Enemy Search A or B"
   },
   {
     "name":"Kudlak",
@@ -5812,6 +6044,10 @@
       27,
       31,
       25
+    ],
+    "special_fusion": [
+      "Karasu Tengu",
+      "Koppa Tengu"
     ]
   },
   {
@@ -6141,7 +6377,8 @@
       19,
       22,
       20
-    ]
+    ],
+    "fusion_condition": "Defeat Lorelei in EX Mission \"Blue Jet Reclamation\""
   },
   {
     "name":"Macabre",
@@ -6262,7 +6499,8 @@
       12,
       11,
       15
-    ]
+    ],
+    "fusion_condition": "Defeat Mamedanuki in EX Mission \"A sport for gentlemen\" or in Antlia with Enemy Search A or B"
   },
   {
     "name":"Mandrake",
@@ -6357,7 +6595,8 @@
       54,
       52,
       53
-    ]
+    ],
+    "fusion_condition": "Defeat Mara in EX Mission \"Evil's lingering shadow\" or clear EX Mission \"Mara's desire\""
   },
   {
     "name":"Masakado",
@@ -6386,6 +6625,13 @@
       55,
       58,
       57
+    ],
+    "special_fusion": [
+      "Hachiman",
+      "Bishamonten",
+      "Jikokuten",
+      "Koumokuten",
+      "Zouchouten"
     ]
   },
   {
@@ -6422,7 +6668,8 @@
       17,
       27,
       19
-    ]
+    ],
+    "fusion_condition": "Defeat Matador in Carina with Enemy Search"
   },
   {
     "name":"Mayahuel",
@@ -6570,6 +6817,11 @@
       35,
       34,
       35
+    ],
+    "fusion_condition": "Defeat Mitra in Fornax",
+    "special_fusion": [
+      "Mithras",
+      "Inti"
     ]
   },
   {
@@ -6634,6 +6886,11 @@
       30,
       32,
       34
+    ],
+    "fusion_condition": "Defeat Moloch in Fornax",
+    "special_fusion": [
+      "Morax",
+      "Ose"
     ]
   },
   {
@@ -6694,7 +6951,8 @@
       50,
       55,
       56
-    ]
+    ],
+    "fusion_condition": "Defeat Mot in any Sector with Enemy Search C"
   },
   {
     "name":"Mother Harlot",
@@ -6727,6 +6985,13 @@
       58,
       53,
       57
+    ],
+    "fusion_condition": "Defeat Mother Harlot in EX Mission \"The holy dragonslayer\"",
+    "special_fusion": [
+      "Pale Rider",
+      "Black Rider",
+      "Red Rider",
+      "White Rider"
     ]
   },
   {
@@ -7025,6 +7290,12 @@
       46,
       44,
       51
+    ],
+    "fusion_condition": "Clear EX Mission \"Fateful aid\"",
+    "special_fusion" : [
+      "Atropos",
+      "Lachesis",
+      "CLotho"
     ]
   },
   {
@@ -7201,7 +7472,7 @@
     ]
   },
   {
-    "name":"Omoteotl",
+    "name":"Ometeotl",
     "align":"Light-Neutral",
     "code":103,
     "hpmod":1.1,
@@ -7257,6 +7528,11 @@
       39,
       47,
       39
+    ],
+    "special_fusion": [
+      "Sui-Ki",
+      "Fuu-Ki",
+      "Kin-Ki"
     ]
   },
   {
@@ -7342,6 +7618,11 @@
       39,
       34,
       36
+    ],
+    "fusion_condition": "Defeat Orcus in Fornax",
+    "special_fusion": [
+      "Horkos",
+      "Hel"
     ]
   },
   {
@@ -7564,7 +7845,8 @@
       49,
       54,
       50
-    ]
+    ],
+    "fusion_condition": "Defeat Pale Rider in Grus with Enemy Search"
   },
   {
     "name":"Pales",
@@ -8243,7 +8525,8 @@
       37,
       44,
       36
-    ]
+    ],
+    "fusion_condition": "Defeat Red Rider in Eridanus with Enemy Search"
   },
   {
     "name":"Rukh",
@@ -8544,6 +8827,17 @@
       57,
       55,
       59
+    ],
+    "fusion_condition": "Defeat Seraph in EX Mission \"Mara's desire\" or clear EX Mission \"Evil's lingering shadow\"",
+    "special_fusion": [
+      "Cherub",
+      "Throne",
+      "Dominion",
+      "Virtue",
+      "Power",
+      "Principality",
+      "Archangel",
+      "Angel"
     ]
   },
   {
@@ -8577,7 +8871,8 @@
       54,
       53,
       49
-    ]
+    ],
+    "fusion_condition": "Defeat Seth in any Sector with Enemy Search C"
   },
   {
     "name":"Shan Xiao",
@@ -8663,6 +8958,10 @@
       58,
       56,
       54
+    ],
+    "special_fusion": [
+      "Barong",
+      "Rangda"
     ]
   },
   {
@@ -9694,7 +9993,8 @@
       52,
       49,
       58
-    ]
+    ],
+    "fusion_condition": "Defeat Trumpter in Horologium with Enemy Search"
   },
   {
     "name":"Tzitzimitl",
@@ -10080,7 +10380,8 @@
       31,
       36,
       31
-    ]
+    ],
+    "fusion_condition": "Defeat White Rider in Delphinus with Enemy Search"
   },
   {
     "name":"Wild Hunt",
@@ -10295,7 +10596,8 @@
       50,
       35,
       42
-    ]
+    ],
+    "fusion_condition": "Defeat Yggdrasil in EX Mission \"Fateful aid\""
   },
   {
     "name":"Yuki Jyorou",
@@ -10503,6 +10805,7 @@
       25,
       27,
       24
-    ]
+    ],
+    "fusion_condition": "Defeat Zouchouten in EX Mission \"The ever-steeper trial I\""
   }
 ]
