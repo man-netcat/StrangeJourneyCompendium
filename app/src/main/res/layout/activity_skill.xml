@@ -12,26 +12,16 @@
         android:orientation="vertical">
 
         <TableLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/name" />
+                <TextView android:text="@string/name" />
 
-                <Space
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/skill_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                <TextView android:id="@+id/skill_name" />
 
             </TableRow>
 
@@ -39,141 +29,67 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/effect" />
+                <TextView android:text="@string/effect" />
 
-                <Space
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/skill_effect"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                <TextView android:id="@+id/skill_effect" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/element" />
+                <TextView android:text="@string/element" />
 
-                <Space
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/skill_element"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                <TextView android:id="@+id/skill_element" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/power" />
+                <TextView android:text="@string/power" />
 
-                <Space
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/skill_power"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                <TextView android:id="@+id/skill_power" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/accuracy" />
+                <TextView android:text="@string/accuracy" />
 
-                <Space
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/skill_accuracy"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                <TextView android:id="@+id/skill_accuracy" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cost" />
+                <TextView android:text="@string/cost" />
 
-                <Space
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/skill_cost"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                <TextView android:id="@+id/skill_cost" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/inherit" />
+                <TextView android:text="@string/inherit" />
 
-                <Space
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/skill_inherit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                <TextView android:id="@+id/skill_inherit" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/rank" />
+                <TextView android:text="@string/rank" />
 
-                <Space
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/skill_rank"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                <TextView android:id="@+id/skill_rank" />
 
             </TableRow>
 
         </TableLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
 
         <TableLayout
             android:layout_width="match_parent"
@@ -185,15 +101,11 @@
 
                 <TextView
                     android:id="@+id/demon_string"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/demons" />
 
                 <TextView
                     android:id="@+id/source_string"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Demon sources containing " />
             </TableRow>
@@ -204,16 +116,12 @@
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/skill_demons"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1">
 
                 </android.support.v7.widget.RecyclerView>
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/source_demons"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1">
 
                 </android.support.v7.widget.RecyclerView>

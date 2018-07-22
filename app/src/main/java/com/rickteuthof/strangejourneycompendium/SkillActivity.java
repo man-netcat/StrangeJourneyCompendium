@@ -54,7 +54,7 @@ public class SkillActivity extends AppCompatActivity {
         if (cost != 0) {
             costView.setText(String.format("%s", Integer.toString(cost - 1000)));
         } else {
-            costView.setText(R.string.none);
+            costView.setText("-");
         }
 
         effectView.setText(String.format("%s", skill.getEffect()));
@@ -64,28 +64,28 @@ public class SkillActivity extends AppCompatActivity {
         if (rank != 0) {
             rankView.setText(String.format("%s", Integer.toString(rank)));
         } else {
-            rankView.setText(R.string.none);
+            rankView.setText("-");
         }
 
         int accuracy = skill.getAccuracy();
         if (accuracy != 0) {
             accuracyView.setText(String.format("%s", Integer.toString(accuracy)));
         } else {
-            accuracyView.setText(R.string.none);
+            accuracyView.setText("-");
         }
 
         int power = skill.getPower();
         if (power != 0) {
             powerView.setText(String.format("%s", Integer.toString(power)));
         } else {
-            powerView.setText(R.string.none);
+            powerView.setText("-");
         }
 
         String inherit = skill.getInherit();
         if (inherit != null) {
             inheritView.setText(String.format("%s", inherit));
         } else {
-            inheritView.setText(R.string.none);
+            inheritView.setText("-");
         }
 
         demonStringView.append(" " + name + ":");
