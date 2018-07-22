@@ -2,32 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/menu"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_width="match_parent"
         android:adjustViewBounds="true"
         android:contentDescription="@string/logo"
         app:srcCompat="@drawable/logo" />
 
-    <Button
-        android:id="@+id/searchDemon"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/search_demon_by_name" />
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/searchSkill"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/search_demon_by_skill" />
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:id="@+id/searchDemon"
+            android:layout_width="wrap_content"
+            android:text="@string/search_demon_by_name"
+            android:layout_weight="1"/>
+
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:id="@+id/searchSkill"
+            android:layout_width="wrap_content"
+            android:text="@string/search_demon_by_skill"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
 </LinearLayout>

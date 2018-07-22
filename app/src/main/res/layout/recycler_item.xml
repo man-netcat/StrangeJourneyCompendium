@@ -16,7 +16,6 @@
         <TextView
             android:id="@+id/result"
             android:layout_width="match_parent"
-            android:layout_height="37dp"
             android:text="@string/result"
             android:textColor="@android:color/black"
             android:translationX="10dp"
