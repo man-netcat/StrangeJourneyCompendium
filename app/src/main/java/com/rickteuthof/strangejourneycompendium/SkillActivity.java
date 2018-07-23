@@ -111,7 +111,6 @@ public class SkillActivity extends AppCompatActivity {
                 DemonActivity.name = skillResults.get(position);
                 Intent obj = new Intent(SkillActivity.this, DemonActivity.class);
                 startActivity(obj);
-                finish();
             }
 
             @Override
@@ -125,7 +124,6 @@ public class SkillActivity extends AppCompatActivity {
                 DemonActivity.name = sourceResults.get(position);
                 Intent obj = new Intent(SkillActivity.this, DemonActivity.class);
                 startActivity(obj);
-                finish();
             }
 
             @Override
