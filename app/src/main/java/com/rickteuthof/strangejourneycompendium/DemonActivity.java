@@ -169,6 +169,7 @@ public class DemonActivity extends AppCompatActivity {
                     SkillActivity.name = viewText;
                     Intent obj = new Intent(DemonActivity.this, SkillActivity.class);
                     startActivity(obj);
+                    finish();
                 }
             }
         };

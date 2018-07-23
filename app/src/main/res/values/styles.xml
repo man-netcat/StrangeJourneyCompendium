@@ -13,6 +13,6 @@
     </style>
 
     <style name="CustomTextView" parent="android:Widget.TextView">
-        <item name="android:padding" parent="TextView">5dp</item>
+        <item name="android:padding" parent="TextView">10dp</item>
     </style>
 </resources>
