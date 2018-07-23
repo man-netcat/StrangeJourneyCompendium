@@ -13,8 +13,6 @@ import java.util.ArrayList;
 public class SkillActivity extends AppCompatActivity {
     public static String name;
     public static Skill[] skills = MainActivity.skills;
-    public static boolean skillsChecked = true;
-    public static boolean sourceChecked = true;
     public static ArrayList<String> skillResults;
     public static ArrayList<String> sourceResults;
 
@@ -92,11 +90,8 @@ public class SkillActivity extends AppCompatActivity {
     }
 
     public void handleRecyclerView() {
-        skillResults = new ArrayList<>();
-        sourceResults = new ArrayList<>();
-
-        skillResults.addAll(MainActivity.demonNames);
-        sourceResults.addAll(MainActivity.demonNames);
+        skillResults = new ArrayList<>(MainActivity.demonNames);
+        sourceResults = new ArrayList<>(MainActivity.demonNames);
 
         RecyclerView skillRecyclerView = findViewById(R.id.skill_demons);
         RecyclerView sourceRecyclerView = findViewById(R.id.source_demons);

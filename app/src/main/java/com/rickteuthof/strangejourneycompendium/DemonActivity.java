@@ -4,15 +4,19 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class DemonActivity extends AppCompatActivity {
     public static String name;
     public final Demon[] demons = MainActivity.demons;
+    public ArrayList<String> results;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,7 @@ public class DemonActivity extends AppCompatActivity {
 
         handleTextViews(demon);
         handleImageView();
+        handleRecyclerView(demon);
     }
 
     public Demon getCurrentDemon(String name) {
@@ -32,6 +37,31 @@ public class DemonActivity extends AppCompatActivity {
             }
         }
         return null;
+    }
+
+    public void handleRecyclerView(Demon demon) {
+        RecyclerView fusionView = findViewById(R.id.demon_fusion);
+        ArrayList<String> specialFusion = demon.getSpecialFusion();
+
+        if (specialFusion != null) {
+            results = new ArrayList<>(specialFusion);
+            Adapter adapter = new Adapter(this, results);
+            fusionView.setAdapter(adapter);
+            fusionView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+            fusionView.addOnItemTouchListener(new SearchActivity.RecyclerTouchListener(getApplicationContext(), fusionView, new SearchActivity.ClickListener() {
+                @Override
+                public void onClick(View view, int position) {
+                    DemonActivity.name = results.get(position);
+                    Intent obj = new Intent(DemonActivity.this, DemonActivity.class);
+                    startActivity(obj);
+                }
+
+                @Override
+                public void onLongClick(View view, int position) {
+
+                }
+            }));
+        }
     }
 
     public void handleTextViews(Demon demon) {
@@ -53,6 +83,7 @@ public class DemonActivity extends AppCompatActivity {
         TextView inheritanceView = findViewById(R.id.demon_inherits);
         TextView attackView = findViewById(R.id.demon_attack);
         TextView lvlView = findViewById(R.id.demon_lvl);
+        TextView conditionView = findViewById(R.id.demon_fusion_condition);
 
         stats[0] = findViewById(R.id.demon_hp);
         stats[1] = findViewById(R.id.demon_mp);
@@ -84,6 +115,12 @@ public class DemonActivity extends AppCompatActivity {
         nameView.setText(demon.getName());
         raceView.setText(demon.getRace());
         lvlView.setText(String.format("%s", Integer.toString((int)demon.getLvl())));
+
+        String fusionCondition = demon.getFusionCondition();
+
+        if (fusionCondition != null) {
+            conditionView.setText(fusionCondition);
+        }
 
         ArrayList<Integer> statArray = demon.getStats();
         ArrayList<String> resistanceArray = Parsers.parseResistance(demon.getResists());

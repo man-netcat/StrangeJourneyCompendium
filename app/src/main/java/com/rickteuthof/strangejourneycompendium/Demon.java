@@ -276,4 +276,17 @@ public class Demon {
     public void setHpmod(Double hpmod) {
         this.hpmod = hpmod;
     }
+
+    private String fusion_condition;
+
+    public String getFusionCondition() { return this.fusion_condition; }
+
+    public void setFusionCondition(String fusion_condition) { this.fusion_condition = fusion_condition; }
+
+    private ArrayList<String> special_fusion;
+
+    public ArrayList<String> getSpecialFusion() { return this.special_fusion; }
+
+    public void setSpecialFusion(ArrayList<String> special_fusion) { this.special_fusion = special_fusion; }
+
 }

@@ -9,14 +9,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:fullBackupContent="@xml/backup_descriptor">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DemonActivity" />
+        <activity android:name=".DemonActivity"
+            android:theme="@style/AppTheme" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".SkillActivity" />
     </application>

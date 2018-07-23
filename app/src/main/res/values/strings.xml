@@ -64,4 +64,6 @@
     <string name="mute">Mute:</string>
     <string name="bomb">Bomb:</string>
     <string name="containing">Demon sources containing</string>
+    <string name="fusion_condition">Fusion Condition:</string>
+    <string name="special_fusion">Special Fusion</string>
 </resources>
