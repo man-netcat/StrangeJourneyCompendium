@@ -86,6 +86,7 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
 
     public interface ClickListener {
         void onClick(View view, int position);
+
         void onLongClick(View view, int position);
     }
 
